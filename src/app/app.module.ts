@@ -9,7 +9,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 // app routing && api constant
 import { ROUTES } from './app.routes';
-
 // App modules
 import { LayoutsModule } from './components/common/layouts/layouts.module';
 
@@ -19,7 +18,6 @@ import { LoginComponent } from './views/login/login.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { UsersComponent } from './views/users/users.component';
-
 // app services
 import { AuthGuardService } from './services/guard/auth.guard';
 import { RestApiService } from './services/http.service';
