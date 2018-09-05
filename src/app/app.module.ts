@@ -18,6 +18,7 @@ import { LoginComponent } from './views/login/login.component';
 // app components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
+import { UsersComponent } from './views/users/users.component';
 
 // app services
 import { AuthGuardService } from './services/guard/auth.guard';
@@ -29,6 +30,7 @@ import { UsersService } from './services/users/users.service';
     AppComponent,
     HomeComponent,
     LoginComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
