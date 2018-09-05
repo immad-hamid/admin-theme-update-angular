@@ -1,0 +1,40 @@
+<div class="wrapper wrapper-content">
+  <div class="row" *ngIf="users">
+    
+    <div class="col-lg-3 col-md-4 col-sm-6 pad-5" *ngFor="let user of users">
+      <!-- card starts -->
+      <div class="card">
+
+        <div class="imgHeader">
+          <div class="roundImg">
+            <img [src]="user.image ? user.image : 'http://demogroup.se/wp-content/uploads/2015/12/user.png'" alt="Avatar" style="width:100%">
+          </div>
+        </div>
+
+        <div class="cardTextArea">
+
+          <div class="userBasicInfo">
+            <h4><b *ngIf="user.displayName">{{ user.displayName }}</b></h4> 
+            <p *ngIf="user.mua">MakeUp Artist</p>
+            <p *ngIf="!user.mua">User</p>
+          </div>
+
+          <div class="userOtherInfo">
+            <ul class="list-group">
+              <li class="list-group-item"><b>Gender:</b> <span *ngIf="user.gender">{{ user.gender }}</span></li>
+              <li class="list-group-item"><b>Phone:</b> <span *ngIf="user.phoneNumber">{{ user.phoneNumber }}</span></li>
+              <li class="list-group-item" style="min-height: 100px"><b>Location:</b> <span *ngIf="user.location">{{ user.location.street || 'No Address' }}</span></li>
+            </ul>
+          </div>
+
+          <div class="viewProfile">
+              <a [routerLink]="['../user', user._id]" class="btn btn-primary btn-block">View Profile</a>
+          </div>
+
+        </div>
+      </div>
+      <!-- card ends -->
+    </div>
+
+  </div>
+</div>

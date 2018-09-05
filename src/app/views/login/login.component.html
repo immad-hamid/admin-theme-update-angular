@@ -1,0 +1,55 @@
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+  <div>
+      <div>
+          <h1 class="logo-name">Feroze1888</h1>
+      </div>
+    
+      <!-- add a package -->
+    <form [formGroup]="loginForm">
+            <div 
+            [ngClass]="{'has-error': userName.touched && userName.invalid}"
+            class="form-group">
+              <br>
+              <input
+                formControlName="userName"
+                type="text" id="userName" placeholder="User Name" class="form-control">
+              <div 
+                *ngIf="userName.touched && userName.invalid"
+                class="alert alert-danger">
+                  <!-- if package name is not entered -->
+                  <div *ngIf="userName.errors.required">
+                      User Name is required.
+                  </div>
+                  <!-- if package name has not the min length -->
+                  <div *ngIf="userName.errors.minlength">
+                      User Name should contain {{ userName.errors.minlength.requiredLength }} characters.
+                  </div>
+              </div>
+            </div>
+      
+            <div 
+            [ngClass]="{'has-error': userPass.touched && userPass.invalid}"
+            class="form-group">
+              <input
+              formControlName="userPass"
+              type="password" id="userPass" placeholder="User Password" class="form-control">
+              <div 
+                *ngIf="userPass.touched && userPass.invalid"
+                class="alert alert-danger">
+                  <!-- if package price is not entered -->
+                  <div *ngIf="userPass.errors.required">
+                      Password is required.
+                  </div>
+              </div>
+            </div>
+
+            <button 
+                [disabled]="userName.invalid || userPass.invalid"
+                (click)="loginUser()"
+                type="submit" 
+                class="btn btn-primary block full-width m-b">Login</button>
+          </form>
+          <!-- add a package ends -->
+     
+  </div>
+</div>
